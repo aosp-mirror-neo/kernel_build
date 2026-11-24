@@ -917,6 +917,7 @@ def update_linux_server_kernel_for_arch(output_dir, version, arch, target):
 
   clean_download_dir(arch_dir)
   download_kernel(target, version, arch_dir)
+  download_kernel_modules(target, arch_dir, fetch_initramfs=True)
   write_prebuilt_info(arch_dir)
 
   (_, new_sha) = get_binary_kernel_version(kernel_path)
